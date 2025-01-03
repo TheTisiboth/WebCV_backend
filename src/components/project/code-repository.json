@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_project_code_repositories",
+  "info": {
+    "displayName": "CodeRepository",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "github",
+        "gitlab"
+      ],
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

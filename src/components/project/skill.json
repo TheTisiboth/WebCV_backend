@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_project_skills",
+  "info": {
+    "displayName": "Skill",
+    "icon": "plus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "angular",
+        "arduino",
+        "arm",
+        "bootstrap",
+        "c",
+        "css",
+        "git",
+        "html",
+        "java",
+        "jhipster",
+        "jquery",
+        "linux",
+        "mongodb",
+        "mui",
+        "node",
+        "ocaml",
+        "php",
+        "postgres",
+        "python",
+        "react",
+        "spring",
+        "sql"
+      ],
+      "required": true
+    }
+  }
+}

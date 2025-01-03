@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_history_pictures",
+  "info": {
+    "displayName": "dates",
+    "icon": "calendar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date"
+    }
+  }
+}

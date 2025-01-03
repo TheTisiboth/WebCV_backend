@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cities_coordinates",
+  "info": {
+    "displayName": "coordinate",
+    "icon": "pinMap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "lat": {
+      "type": "decimal",
+      "required": true
+    },
+    "lng": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}
