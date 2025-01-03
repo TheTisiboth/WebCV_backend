@@ -1,11 +1,12 @@
 {
   "name": "web-cv-backend",
+  "packageManager": "pnpm@9.15.2",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
-    "deploy": "strapi deploy",
+    "deploy": "git push heroku HEAD:main",
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi"
@@ -27,8 +28,8 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+    "node": "20.14.0",
+    "npm": "10.7.0"
   },
   "strapi": {
     "uuid": "b1d4c2d6-b17d-4d65-bd57-8d26c8dd6b1a"
