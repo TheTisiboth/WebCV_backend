@@ -40,51 +40,12 @@ export interface ProjectCodeRepository extends Struct.ComponentSchema {
   };
 }
 
-export interface ProjectSkill extends Struct.ComponentSchema {
-  collectionName: 'components_project_skills';
-  info: {
-    description: '';
-    displayName: 'Skill';
-    icon: 'plus';
-  };
-  attributes: {
-    name: Schema.Attribute.Enumeration<
-      [
-        'angular',
-        'arduino',
-        'arm',
-        'bootstrap',
-        'c',
-        'css',
-        'git',
-        'html',
-        'java',
-        'jhipster',
-        'jquery',
-        'linux',
-        'mongodb',
-        'mui',
-        'node',
-        'ocaml',
-        'php',
-        'postgres',
-        'python',
-        'react',
-        'spring',
-        'sql',
-      ]
-    > &
-      Schema.Attribute.Required;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'cities.coordinate': CitiesCoordinate;
       'history.picture': HistoryPicture;
       'project.code-repository': ProjectCodeRepository;
-      'project.skill': ProjectSkill;
     }
   }
 }

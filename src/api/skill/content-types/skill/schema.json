@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "skills",
+  "info": {
+    "singularName": "skill",
+    "pluralName": "skills",
+    "displayName": "Skill",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "system": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::all-skill.all-skill"
+    },
+    "software": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::all-skill.all-skill"
+    },
+    "web": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::all-skill.all-skill"
+    },
+    "other": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::all-skill.all-skill"
+    }
+  }
+}

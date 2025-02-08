@@ -59,17 +59,6 @@
         }
       }
     },
-    "skills": {
-      "type": "component",
-      "repeatable": true,
-      "component": "project.skill",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
     "year": {
       "type": "string",
       "required": true,
@@ -87,6 +76,11 @@
       },
       "type": "decimal",
       "required": true
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::all-skill.all-skill"
     }
   }
 }
