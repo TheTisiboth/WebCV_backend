@@ -13,25 +13,25 @@
     "t4s": "t4s"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.6.0",
+    "@strapi/plugin-cloud": "^5.9.0",
     "@strapi/plugin-graphql": "^5.9.0",
-    "@strapi/plugin-users-permissions": "5.6.0",
+    "@strapi/plugin-users-permissions": "^5.9.0",
     "@strapi/provider-upload-cloudinary": "^5.9.0",
-    "@strapi/strapi": "5.6.0",
+    "@strapi/strapi": "^5.9.0",
     "better-sqlite3": "11.3.0",
     "pg": "^8.13.1",
     "pg-connection-string": "^2.7.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
-    "styled-components": "^6.0.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.29.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/node": "^20.17.17",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "strapi-schema-types": "^1.0.1",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
   },
   "engines": {
     "node": "20.14.0"
