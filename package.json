@@ -10,7 +10,7 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
-    "t4s": "t4s"
+    "generate-types": "t4s -- --v5"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "^5.9.0",

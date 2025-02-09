@@ -31,7 +31,7 @@ pnpm run build
 This project is hosted on Heroku. In order to achieve this, I followed this [documentation](https://strapi.io/integrations/heroku).
 Because it is hosted on Heroku, the file system is ephemeral, and the data will be lost when the dyno restarts. To avoid this, I used a PostgreSQL database, hosted on Heroku as well, and I host the media files on cloudinary.
 For the cloudinary integration, I followed this [documentation](https://strapi.io/blog/add-cloudinary-support-to-your-strapi-application).
-Furthermore, I first created a local db, and then I transfered the data to the production db, using the following command:
+Furthermore, I first created a local db, and then I transferred the data to the production db, using the following command:
 ```
 npm run strapi transfer -- --to <my_admin_url> ‑‑to‑token <my_token>
 ```
@@ -54,5 +54,5 @@ In order to deploy your project to Heroku, you should just commit your changes o
 I'm using a script in order to generate the types based on the Strapi API. I followed this [documentation](https://www.npmjs.com/package/strapi-plugin-schemas-to-ts) to achieve this.
 In order to generate the types, you should run the following command:
 ```
-pnpm run t4s -- --v5
+pnpm run generate-types
 ```
