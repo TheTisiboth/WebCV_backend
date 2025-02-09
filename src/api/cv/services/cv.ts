@@ -1,9 +1,11 @@
 /**
  * cv service
  */
+import {Strapi} from "@strapi/types/dist/core";
 
-export default ({strapi}) => ({
-    async fetchCVS() {
-        return 'service ok'
+export default ({strapi}: { strapi: Strapi }) => ({
+    fetchCVS: async () => {
+        return 'service okkay'
     }
-});
+})
+
