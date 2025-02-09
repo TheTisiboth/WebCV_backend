@@ -52,3 +52,7 @@ In order to deploy your project to Heroku, you should just commit your changes o
 ### Generate types script
 
 I'm using a script in order to generate the types based on the Strapi API. I followed this [documentation](https://www.npmjs.com/package/strapi-plugin-schemas-to-ts) to achieve this.
+In order to generate the types, you should run the following command:
+```
+pnpm run t4s -- --v5
+```
