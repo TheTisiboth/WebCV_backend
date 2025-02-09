@@ -9,10 +9,12 @@
     "deploy": "git push heroku HEAD:main",
     "develop": "strapi develop",
     "start": "strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "t4s": "t4s"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.6.0",
+    "@strapi/plugin-graphql": "^5.9.0",
     "@strapi/plugin-users-permissions": "5.6.0",
     "@strapi/provider-upload-cloudinary": "^5.9.0",
     "@strapi/strapi": "5.6.0",
@@ -28,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "strapi-schema-types": "^1.0.1",
     "typescript": "^5"
   },
   "engines": {

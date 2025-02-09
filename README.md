@@ -1,15 +1,13 @@
 # 🚀 Getting started with Strapi
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Strapi comes with a full-featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
 ```
-npm run develop
-# or
-yarn develop
+pnpm run develop
 ```
 
 ### `start`
@@ -17,9 +15,7 @@ yarn develop
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
 ```
-npm run start
-# or
-yarn start
+pnpm run start
 ```
 
 ### `build`
@@ -27,35 +23,32 @@ yarn start
 Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
 ```
-npm run build
-# or
-yarn build
+pnpm run build
 ```
+
+## Integration
+
+This project is hosted on Heroku. In order to achieve this, I followed this [documentation](https://strapi.io/integrations/heroku).
+Because it is hosted on Heroku, the file system is ephemeral, and the data will be lost when the dyno restarts. To avoid this, I used a PostgreSQL database, hosted on Heroku as well, and I host the media files on cloudinary.
+For the cloudinary integration, I followed this [documentation](https://strapi.io/blog/add-cloudinary-support-to-your-strapi-application).
+Furthermore, I first created a local db, and then I transfered the data to the production db, using the following command:
+```
+npm run strapi transfer -- --to <my_admin_url> ‑‑to‑token <my_token>
+```
+I faced some issues using pnpm for this command, so as a workaround, when I used this command, here are the steps I followed:
+- I removed all mention to pnpm in the package.json file
+- I rebuild the project with npm: `npm install`
+- I ran the command: `npm run strapi transfer -- --to <my_admin_url> ‑‑to‑token <my_token
+- I rebuilt the project with pnpm: `pnpm install`
+
 
 ## ⚙️ Deployment
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). However, I chose to host it on Heroku.
+In order to deploy your project to Heroku, you should just commit your changes on main branch, and it will be automatically deployed.
 
-```
-yarn strapi deploy
-```
+## Technical details
 
-## 📚 Learn more
+### Generate types script
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+I'm using a script in order to generate the types based on the Strapi API. I followed this [documentation](https://www.npmjs.com/package/strapi-plugin-schemas-to-ts) to achieve this.
