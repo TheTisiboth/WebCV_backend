@@ -8,9 +8,9 @@ export default ({strapi}: {strapi: Strapi}) => ({
     handleFetchCVS: async (ctx: Context) => {
         try {
             const response = await strapi.service('api::cv.cv').fetchCVS();
-            ctx.body = {testt: 'okidoki', response}
+            ctx.body = {response};
         } catch (err) {
-            ctx.body = err;
+            ctx.body = {err};
             ctx.status = 500;
         }
     }
