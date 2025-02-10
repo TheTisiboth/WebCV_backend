@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -33,7 +33,8 @@
           "localized": false
         }
       },
-      "component": "cities.coordinate"
+      "component": "cities.coordinate",
+      "required": true
     }
   }
 }

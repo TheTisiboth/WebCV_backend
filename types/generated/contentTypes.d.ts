@@ -378,7 +378,7 @@ export interface ApiAllSkillAllSkill extends Struct.CollectionTypeSchema {
     singularName: 'all-skill';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -415,7 +415,7 @@ export interface ApiCityCity extends Struct.CollectionTypeSchema {
     singularName: 'city';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -424,6 +424,7 @@ export interface ApiCityCity extends Struct.CollectionTypeSchema {
   };
   attributes: {
     coordinate: Schema.Attribute.Component<'cities.coordinate', false> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -457,7 +458,7 @@ export interface ApiHistoryHistory extends Struct.CollectionTypeSchema {
     singularName: 'history';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -528,7 +529,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     singularName: 'project';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -606,7 +607,7 @@ export interface ApiSkillSkill extends Struct.SingleTypeSchema {
     singularName: 'skill';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
