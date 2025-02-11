@@ -449,6 +449,33 @@ export interface ApiCityCity extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCvCv extends Struct.CollectionTypeSchema {
+  collectionName: 'cvs';
+  info: {
+    displayName: 'CV';
+    pluralName: 'cvs';
+    singularName: 'cv';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cv: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
+    cv_locale: Schema.Attribute.Enumeration<['fr', 'en', 'de']> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::cv.cv'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHistoryHistory extends Struct.CollectionTypeSchema {
   collectionName: 'histories';
   info: {
@@ -1141,6 +1168,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::all-skill.all-skill': ApiAllSkillAllSkill;
       'api::city.city': ApiCityCity;
+      'api::cv.cv': ApiCvCv;
       'api::history.history': ApiHistoryHistory;
       'api::project.project': ApiProjectProject;
       'api::skill.skill': ApiSkillSkill;

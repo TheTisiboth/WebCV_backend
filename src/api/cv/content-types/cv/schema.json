@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cvs",
+  "info": {
+    "singularName": "cv",
+    "pluralName": "cvs",
+    "displayName": "CV"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cv": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "cv_locale": {
+      "type": "enumeration",
+      "enum": [
+        "fr",
+        "en",
+        "de"
+      ],
+      "required": true
+    }
+  }
+}
