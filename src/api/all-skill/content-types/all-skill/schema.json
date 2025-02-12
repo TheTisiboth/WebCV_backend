@@ -22,8 +22,7 @@
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     },
     "href": {
@@ -34,9 +33,6 @@
       "type": "boolean"
     },
     "width": {
-      "type": "integer"
-    },
-    "height": {
       "type": "integer"
     }
   }

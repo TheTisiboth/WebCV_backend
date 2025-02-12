@@ -384,10 +384,8 @@ export interface ApiAllSkillAllSkill extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    height: Schema.Attribute.Integer;
     href: Schema.Attribute.String & Schema.Attribute.Required;
-    image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -521,7 +519,8 @@ export interface ApiHistoryHistory extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::history.history'
     >;
-    picture: Schema.Attribute.Media<'images' | 'files'> &
+    picture: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -596,7 +595,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::project.project'
     >;
-    picture: Schema.Attribute.Media<'images' | 'files'> &
+    picture: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
