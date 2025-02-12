@@ -80,6 +80,17 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::all-skill.all-skill"
+    },
+    "order": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "unique": true
     }
   }
 }
