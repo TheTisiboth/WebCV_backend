@@ -17,6 +17,7 @@ RUN pnpm install --frozen-lockfile
 FROM base AS build
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
+# Build admin panel
 RUN pnpm run build
 
 # Production stage
@@ -28,8 +29,9 @@ COPY --from=build /app/.strapi ./.strapi
 COPY package.json ./
 COPY config ./config
 COPY database ./database
-COPY public ./public
 COPY src ./src
+COPY public ./public
+COPY tsconfig.json ./
 
 # Expose port 3002
 EXPOSE 3002
