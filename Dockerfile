@@ -24,10 +24,12 @@ FROM base AS production
 ENV NODE_ENV=production
 
 COPY --from=dependencies /app/node_modules ./node_modules
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/build ./build
+COPY --from=build /app/.strapi ./.strapi
 COPY package.json ./
+COPY config ./config
+COPY database ./database
 COPY public ./public
+COPY src ./src
 
 # Expose port 3002
 EXPOSE 3002
