@@ -19,6 +19,8 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 # Build admin panel
 RUN pnpm run build
+# Compile TypeScript to JavaScript
+RUN ./node_modules/.bin/tsc
 
 # Production stage
 FROM base AS production
@@ -26,12 +28,9 @@ ENV NODE_ENV=production
 
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=build /app/.strapi ./.strapi
+COPY --from=build /app/dist ./dist
 COPY package.json ./
-COPY config ./config
-COPY database ./database
-COPY src ./src
 COPY public ./public
-COPY tsconfig.json ./
 
 # Expose port 3002
 EXPOSE 3002
