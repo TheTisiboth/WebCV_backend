@@ -14,8 +14,8 @@ export default ({ env }) => ({
             password: config.password,
             ssl: {
                 rejectUnauthorized: false
-            },
+            }
         },
-        debug: false,
     },
+    debug: false,
 });

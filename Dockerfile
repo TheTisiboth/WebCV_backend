@@ -29,6 +29,8 @@ ENV NODE_ENV=production
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=build /app/.strapi ./.strapi
 COPY --from=build /app/dist ./dist
+COPY --from=build /app/dist/config ./config
+COPY --from=build /app/dist/src ./src
 COPY package.json ./
 COPY public ./public
 
