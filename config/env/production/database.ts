@@ -12,7 +12,7 @@ export default ({ env }) => ({
             database: config.database,
             user: config.user,
             password: config.password,
-            ssl: config.ssl || { rejectUnauthorized: false }
+            ssl: false
         },
     },
     debug: false,
