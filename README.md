@@ -1,5 +1,7 @@
 # 🚀 Getting started with Strapi
 
+![Status](https://status.leojan.fr/api/badge/4/status) ![Uptime](https://status.leojan.fr/api/badge/4/uptime/24)
+
 Strapi comes with a full-featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
 ### `develop`
