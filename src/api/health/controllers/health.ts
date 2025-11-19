@@ -25,22 +25,19 @@ export default {
     // Test Cloudinary connection with actual API call
     try {
       const cloudinaryStartTime = Date.now();
-      const uploadConfig = strapi.config.get('plugin.upload') as {
-        config?: {
-          provider?: string;
-          providerOptions?: { cloud_name?: string; api_key?: string; api_secret?: string };
-        };
-      } | undefined;
 
-      const providerOptions = uploadConfig?.config?.providerOptions;
+      // Get Cloudinary config from environment variables
+      const cloudName = process.env.CLOUDINARY_NAME;
+      const apiKey = process.env.CLOUDINARY_KEY;
+      const apiSecret = process.env.CLOUDINARY_SECRET;
 
-      if (providerOptions?.cloud_name && providerOptions?.api_key) {
+      if (cloudName && apiKey && apiSecret) {
         // Ping Cloudinary API to verify connectivity
         const cloudinary = require('cloudinary').v2;
         cloudinary.config({
-          cloud_name: providerOptions.cloud_name,
-          api_key: providerOptions.api_key,
-          api_secret: providerOptions.api_secret,
+          cloud_name: cloudName,
+          api_key: apiKey,
+          api_secret: apiSecret,
         });
 
         // Simple API call to verify credentials and connectivity
@@ -105,16 +102,13 @@ export default {
   async cloudinary(ctx) {
     try {
       const startTime = Date.now();
-      const uploadConfig = strapi.config.get('plugin.upload') as {
-        config?: {
-          provider?: string;
-          providerOptions?: { cloud_name?: string; api_key?: string; api_secret?: string };
-        };
-      } | undefined;
 
-      const providerOptions = uploadConfig?.config?.providerOptions;
+      // Get Cloudinary config from environment variables
+      const cloudName = process.env.CLOUDINARY_NAME;
+      const apiKey = process.env.CLOUDINARY_KEY;
+      const apiSecret = process.env.CLOUDINARY_SECRET;
 
-      if (!providerOptions?.cloud_name || !providerOptions?.api_key) {
+      if (!cloudName || !apiKey || !apiSecret) {
         ctx.body = {
           status: 'error',
           service: 'cloudinary',
@@ -127,9 +121,9 @@ export default {
 
       const cloudinary = require('cloudinary').v2;
       cloudinary.config({
-        cloud_name: providerOptions.cloud_name,
-        api_key: providerOptions.api_key,
-        api_secret: providerOptions.api_secret,
+        cloud_name: cloudName,
+        api_key: apiKey,
+        api_secret: apiSecret,
       });
 
       await cloudinary.api.ping();
